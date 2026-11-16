@@ -47,6 +47,19 @@ python3 -m http.server 8000
 Any static file server works. Opening `index.html` directly from disk also works,
 but a local server is closer to how the site is deployed.
 
+## Publishing
+
+`.github/workflows/pages.yml` publishes the repository root to GitHub Pages on every
+push to `main`. One-time setup in the repository:
+
+**Settings → Pages → Build and deployment → Source: _GitHub Actions_**
+
+Until Pages is enabled with that source the workflow's *Setup Pages* step fails with
+`Resource not accessible by integration` — the default `GITHUB_TOKEN` cannot create the
+Pages site on its own, so this one setting has to be toggled in the UI.
+
+The site is then served at <https://rajdeepvaghela.github.io/BirthdayCalendar/>.
+
 ## Content sources
 
 App details, feature descriptions, permissions and the privacy statement come from
