@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Birthday Calendar — Never forget a birthday again</title>
+<meta name="description" content="Birthday Calendar syncs every birthday from your Facebook account and lets you wish friends and family in a single tap over WhatsApp, SMS, Messenger or a call. Android and Wear OS.">
+<meta name="theme-color" content="#01579b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Birthday Calendar — never forget a birthday again">
+<meta property="og:description" content="Sync all birthdays from your Facebook account and wish them in a single tap. Android app with a home screen widget and Wear OS support.">
+<meta property="og:image" content="assets/img/og-image.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+<link rel="icon" href="assets/img/favicon-512.png" sizes="512x512">
+<link rel="apple-touch-icon" href="assets/img/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>
+  // Set theme before first paint to avoid a flash of the wrong theme.
+  (function () {
+    try {
+      var saved = localStorage.getItem('bc-theme');
+      var system = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.dataset.theme = saved || system;
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="shell header-inner">
+    <a class="brand" href="#top">
+      <img src="assets/img/icon-512.png" alt="" width="36" height="36">
+      <span>Birthday<span class="brand-accent">Calendar</span></span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#screens">Screenshots</a></li>
+        <li><a href="#wear">Wear OS</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.6M12 18.8v2.6M2.6 12h2.6M18.8 12h2.6M5.4 5.4l1.9 1.9M16.7 16.7l1.9 1.9M18.6 5.4l-1.9 1.9M7.3 16.7l-1.9 1.9"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1Z"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm" href="#download">Download</a>
+      </div>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ─────────────────────────── HERO ─────────────────────────── -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+    </div>
+
+    <div class="shell hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span> Android &amp; Wear OS</p>
+        <h1>Never forget a&nbsp;birthday <span class="grad">ever again</span>.</h1>
+        <p class="lede">
+          Birthday Calendar syncs every birthday from your Facebook account and turns
+          remembering into a single tap — wish over WhatsApp, SMS, Messenger, or just
+          call. Your birthdays stay on your device.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="https://github.com/rajdeepvaghela/BirthdayCalendar/releases/latest/download/birthday-calendar.apk" data-download>
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="btn-ico"><path d="M12 3.2v11.1M12 14.3l-4.2-4.2M12 14.3l4.2-4.2M4.4 17.6v1.6a1.6 1.6 0 0 0 1.6 1.6h12a1.6 1.6 0 0 0 1.6-1.6v-1.6"/></svg>
+            Download for Android
+          </a>
+          <a class="btn btn-ghost btn-lg" href="#screens">See the screenshots</a>
+        </div>
+
+        <ul class="hero-facts">
+          <li><strong>One tap</strong><span>to wish</span></li>
+          <li><strong>Widget</strong><span>on your home screen</span></li>
+          <li><strong>Wear OS 3+</strong><span>on your watch</span></li>
+          <li><strong>Offline</strong><span>after the first sync</span></li>
+        </ul>
+      </div>
+
+      <div class="hero-visual" id="heroVisual">
+        <div class="phone" data-tilt>
+          <div class="phone-frame">
+            <span class="phone-notch"></span>
+            <img src="assets/img/04-wish-whatsapp.webp" alt="Birthday Calendar home screen listing today's birthdays with call, message, WhatsApp and Messenger buttons" width="1370" height="2440">
+          </div>
+          <div class="float-card float-card-today">
+            <span class="fc-icon">🎂</span>
+            <div><strong>Today</strong><small>Birthday is today</small></div>
+          </div>
+          <div class="float-card float-card-sync">
+            <span class="fc-icon">🔄</span>
+            <div><strong>Re-Sync</strong><small>Updated instantly</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── FEATURES ─────────────────────────── -->
+  <section class="section" id="features">
+    <div class="shell">
+      <header class="section-head">
+        <p class="eyebrow"><span class="dot"></span> Key features</p>
+        <h2>Everything you need to&nbsp;remember a&nbsp;birthday</h2>
+        <p class="section-sub">Seven features that turn a birthday from a calendar entry into a message you actually send.</p>
+      </header>
+
+      <div class="feature-grid">
+        <article class="card feature">
+          <div class="feature-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <h3>Home screen widget</h3>
+          <p>Add the widget to your home screen and wish friends over WhatsApp, Messenger, SMS or a call without opening the app at all.</p>
+        </article>
+
+        <article class="card feature">
+          <div class="feature-ico"><svg viewBox="0 0 24 24"><path d="M10 13.5a4 4 0 0 0 5.7 0l2.6-2.6a4 4 0 0 0-5.7-5.7L11.4 6.5"/><path d="M14 10.5a4 4 0 0 0-5.7 0l-2.6 2.6a4 4 0 0 0 5.7 5.7l1.2-1.3"/></svg></div>
+          <h3>Automatic contact linking</h3>
+          <p>Contacts are linked to birthdays automatically when the names match exactly. If they don't, link the contact manually from the profile screen.</p>
+        </article>
+
+        <article class="card feature">
+          <div class="feature-ico"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3.5 20.5l1.6-5.1A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8.8 9.3c.4-.9.4-1.7 0-2.4-.5-.8-1.4-1.2-2.3-1"/><path d="M12.4 8.9c.7.1 1.2.4 1.6.9"/></svg></div>
+          <h3>Wish in a single tap</h3>
+          <p>No more digging through Facebook to find a birthday, then switching to WhatsApp. Call, SMS, Messenger or WhatsApp — right from the birthday.</p>
+        </article>
+
+        <article class="card feature">
+          <div class="feature-ico"><svg viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2.4"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/></svg></div>
+          <h3>App lock</h3>
+          <p>A built-in app lock protects your account and your list of birthdays. Unlock with a PIN or with your fingerprint.</p>
+        </article>
+
+        <article class="card feature">
+          <div class="feature-ico"><svg viewBox="0 0 24 24"><path d="M20 12.5a7.5 7.5 0 0 1-10.9 6.7L4 20.5l1.3-4.9A7.5 7.5 0 1 1 20 12.5Z"/><path d="M8.6 11.4h6.8M8.6 14.2h4.3"/></svg></div>
+          <h3>Default wish message</h3>
+          <p>Stop typing the same long birthday wish over and over. Set your default message once and let the app handle the rest.</p>
+        </article>
+
+        <article class="card feature">
+          <div class="feature-ico"><svg viewBox="0 0 24 24"><path d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8L3.6 9.7l5.8-.8Z"/></svg></div>
+          <h3>Favourites filter</h3>
+          <p>We all have a few people who matter most. Mark their birthdays as favourites and filter the home screen down to just them.</p>
+        </article>
+
+        <article class="card feature">
+          <div class="feature-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.6"/><path d="M12 8.4V12l2.6 1.6"/></svg></div>
+          <h3>Wear OS support</h3>
+          <p>Install the app on your watch, pair it with your phone and every birthday syncs across — plus a tile for a quick look at today's list.</p>
+        </article>
+
+        <article class="card feature">
+          <div class="feature-ico"><svg viewBox="0 0 24 24"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1Z"/></svg></div>
+          <h3>Dark mode &amp; backups</h3>
+          <p>A dark theme for night owls, plus encrypted backups of your birthdays, settings and reminders you can restore on a new device.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── HOW IT WORKS ─────────────────────────── -->
+  <section class="section section-alt" id="how">
+    <div class="shell">
+      <header class="section-head">
+        <p class="eyebrow"><span class="dot"></span> How it works</p>
+        <h2>Three steps, then you never&nbsp;think about it&nbsp;again</h2>
+      </header>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">1</span>
+          <h3>Sign in with Facebook</h3>
+          <p>Log in once and the app pulls in the birthdays from your account. No re-syncing by hand every time.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">2</span>
+          <h3>Grant contacts access</h3>
+          <p>Contacts are matched to birthdays by name automatically. Anything that doesn't match can be linked by hand.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">3</span>
+          <h3>Wish in one tap</h3>
+          <p>When the day arrives, tap the birthday and send your message over WhatsApp, Messenger, SMS or a call.</p>
+        </li>
+      </ol>
+
+      <p class="note-inline">
+        After the first sync the app runs without internet — your birthdays are stored locally on your device.
+      </p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── SCREENSHOTS ─────────────────────────── -->
+  <section class="section" id="screens">
+    <div class="shell">
+      <header class="section-head">
+        <p class="eyebrow"><span class="dot"></span> Screenshots</p>
+        <h2>See it in&nbsp;action</h2>
+        <p class="section-sub">Tap any screenshot to open it larger.</p>
+      </header>
+
+      <div class="tabs" role="tablist" aria-label="Screenshot gallery">
+        <button class="tab is-active" role="tab" id="tab-phone" aria-controls="panel-phone" aria-selected="true" type="button">Phone</button>
+        <button class="tab" role="tab" id="tab-wear" aria-controls="panel-wear" aria-selected="false" type="button">Wear OS</button>
+      </div>
+
+      <div class="panel is-active" id="panel-phone" role="tabpanel" aria-labelledby="tab-phone">
+        <div class="shots">
+          <button class="shot" type="button" data-shot="assets/img/01-link-contacts.webp" data-title="Link local contacts" data-note="Contacts are linked to birthdays automatically when the names match exactly.">
+            <img src="assets/img/01-link-contacts.webp" alt="Grant access screen asking for contacts permission to sync Facebook birthdays with local contacts" loading="lazy" width="1370" height="2440">
+            <span class="shot-label">Link local contacts</span>
+          </button>
+          <button class="shot" type="button" data-shot="assets/img/02-fb-login.webp" data-title="Sign in with Facebook" data-note="One login syncs every birthday from your Facebook account.">
+            <img src="assets/img/02-fb-login.webp" alt="Facebook login screen used to sync birthdays" loading="lazy" width="1370" height="2440">
+            <span class="shot-label">Sign in with Facebook</span>
+          </button>
+          <button class="shot" type="button" data-shot="assets/img/03-sync-birthdays.webp" data-title="Sync all birthdays" data-note="The app syncs birthdays from your account in a single pass.">
+            <img src="assets/img/03-sync-birthdays.webp" alt="Sync all Facebook birthdays screen" loading="lazy" width="1370" height="2440">
+            <span class="shot-label">Sync all birthdays</span>
+          </button>
+          <button class="shot" type="button" data-shot="assets/img/04-wish-whatsapp.webp" data-title="Wish on WhatsApp" data-note="Call, SMS, WhatsApp, Messenger and profile — all one tap away.">
+            <img src="assets/img/04-wish-whatsapp.webp" alt="Home screen showing a birthday today with call, SMS, WhatsApp and Messenger buttons" loading="lazy" width="1370" height="2440">
+            <span class="shot-label">Wish on WhatsApp</span>
+          </button>
+          <button class="shot" type="button" data-shot="assets/img/05-dark-mode.webp" data-title="Dark mode" data-note="A dark theme that follows your phone, for late-night reminders.">
+            <img src="assets/img/05-dark-mode.webp" alt="The app home screen in dark mode" loading="lazy" width="1370" height="2440">
+            <span class="shot-label">Dark mode</span>
+          </button>
+          <button class="shot" type="button" data-shot="assets/img/06-widget.webp" data-title="Home screen widget" data-note="Today's birthdays and upcoming ones, right on your home screen.">
+            <img src="assets/img/06-widget.webp" alt="Home screen widget showing today's birthdays and upcoming birthdays" loading="lazy" width="1370" height="2440">
+            <span class="shot-label">Home screen widget</span>
+          </button>
+          <button class="shot" type="button" data-shot="assets/img/07-backup.webp" data-title="Backup your data" data-note="Encrypted backups of birthdays, settings and reminders.">
+            <img src="assets/img/07-backup.webp" alt="Backup dialog letting you select birthdays, settings and reminders to back up" loading="lazy" width="1370" height="2440">
+            <span class="shot-label">Backup your data</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="panel" id="panel-wear" role="tabpanel" aria-labelledby="tab-wear" hidden>
+        <div class="shots shots-watch">
+          <button class="shot shot-watch" type="button" data-shot="assets/img/wear-01.webp" data-title="Today's birthdays on your watch" data-note="A tile shows today's birthdays and who is celebrating.">
+            <img src="assets/img/wear-01.webp" alt="Wear OS tile listing today's birthdays with a View button" loading="lazy" width="454" height="454">
+            <span class="shot-label">Today's birthdays</span>
+          </button>
+          <button class="shot shot-watch" type="button" data-shot="assets/img/wear-02.webp" data-title="Full birthday list" data-note="Every synced birthday, grouped by date.">
+            <img src="assets/img/wear-02.webp" alt="Wear OS screen titled Birthdays showing today's entries" loading="lazy" width="454" height="454">
+            <span class="shot-label">Full birthday list</span>
+          </button>
+          <button class="shot shot-watch" type="button" data-shot="assets/img/wear-03.webp" data-title="View all and re-sync" data-note="Jump to the full list or push a fresh sync to your watch.">
+            <img src="assets/img/wear-03.webp" alt="Wear OS screen with View All and Re-Sync buttons" loading="lazy" width="454" height="454">
+            <span class="shot-label">View all &amp; re-sync</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── WEAR OS ─────────────────────────── -->
+  <section class="section section-alt" id="wear">
+    <div class="shell wear-layout">
+      <div class="wear-copy">
+        <p class="eyebrow"><span class="dot"></span> Wear OS</p>
+        <h2>Your birthdays,&nbsp;on your&nbsp;wrist</h2>
+        <p class="lede">
+          Install Birthday Calendar on your wearable, pair it with your phone and every
+          birthday syncs across automatically. A tile gives you a quick look at the
+          birthdays for today without pulling out your phone.
+        </p>
+        <ul class="check-list">
+          <li>Install the app on your watch and pair it with your phone</li>
+          <li>Birthdays sync from the phone to the wearable</li>
+          <li>A tile shows today's birthdays at a glance</li>
+          <li>Works with Wear OS 3 and newer</li>
+        </ul>
+        <a class="btn btn-primary" href="#download">Get the app</a>
+      </div>
+
+      <div class="wear-watches">
+        <figure class="watch">
+          <img src="assets/img/wear-01.webp" alt="Wear OS tile listing today's birthdays" loading="lazy" width="454" height="454">
+          <figcaption>Today's birthdays, on your wrist</figcaption>
+        </figure>
+        <figure class="watch">
+          <img src="assets/img/wear-02.webp" alt="Wear OS birthday list screen" loading="lazy" width="454" height="454">
+          <figcaption>Every birthday, synced</figcaption>
+        </figure>
+        <figure class="watch">
+          <img src="assets/img/wear-03.webp" alt="Wear OS screen with View All and Re-Sync" loading="lazy" width="454" height="454">
+          <figcaption>Re-sync with one tap</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── PRIVACY ─────────────────────────── -->
+  <section class="section" id="privacy">
+    <div class="shell">
+      <header class="section-head">
+        <p class="eyebrow"><span class="dot"></span> Privacy</p>
+        <h2>Your data stays on your&nbsp;device</h2>
+        <p class="section-sub">
+          Birthday Calendar does not send your personal data out of your device. Your
+          account's birthdays are stored locally, and the app declares no data collected
+          and no data shared with third parties.
+        </p>
+      </header>
+
+      <div class="privacy-grid">
+        <article class="card privacy">
+          <h3>Permissions, and why</h3>
+          <ul>
+            <li><strong>Read contacts</strong> — links birthdays to the contacts saved on your phone.</li>
+            <li><strong>Internet</strong> — syncs birthdays from your Facebook account. The app works without internet once the birthdays are synced.</li>
+          </ul>
+        </article>
+        <article class="card privacy">
+          <h3>Locked down</h3>
+          <ul>
+            <li>App lock with PIN or fingerprint protects your account and birthdays.</li>
+            <li>Backup files are encrypted and stored on your device.</li>
+            <li>Nothing is uploaded, sold or shared.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── FAQ ─────────────────────────── -->
+  <section class="section section-alt" id="faq">
+    <div class="shell shell-narrow">
+      <header class="section-head">
+        <p class="eyebrow"><span class="dot"></span> FAQ</p>
+        <h2>Questions, answered</h2>
+      </header>
+
+      <div class="faq">
+        <details class="faq-item">
+          <summary>Do I need an internet connection?<span class="faq-chev" aria-hidden="true"></span></summary>
+          <p>Only to sync birthdays from your Facebook account the first time. After that the app runs entirely offline because your birthdays are stored on your device.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Why isn't my contact linked automatically?<span class="faq-chev" aria-hidden="true"></span></summary>
+          <p>Contacts are matched by exact name. When a name on Facebook differs from the name in your contacts, you can link it manually from the profile screen.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Why doesn't the WhatsApp button work?<span class="faq-chev" aria-hidden="true"></span></summary>
+          <p>WhatsApp needs both the contacts permission and a WhatsApp account registered for that number. Without one of those, use call or SMS instead.</p>
+        </details>
+        <details class="faq-item">
+          <summary>The widget isn't showing on my home screen<span class="faq-chev" aria-hidden="true"></span></summary>
+          <p>A few launchers don't allow third-party widgets. On those launchers, open the app to see your birthdays instead.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does it work on my smartwatch?<span class="faq-chev" aria-hidden="true"></span></summary>
+          <p>Yes. Install Birthday Calendar on the wearable, pair it with your phone, and the birthdays sync across. Wear OS 3 and newer are supported.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is my data uploaded anywhere?<span class="faq-chev" aria-hidden="true"></span></summary>
+          <p>No. The app stores your account's birthdays locally on your device and sends no personal data out of it. Backups are encrypted and kept on-device too.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── DOWNLOAD ─────────────────────────── -->
+  <section class="section download" id="download">
+    <div class="download-bg" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+    </div>
+    <div class="shell download-inner">
+      <img class="download-icon" src="assets/img/icon-512.png" alt="" width="96" height="96">
+      <h2>Never miss another birthday</h2>
+      <p class="lede">Get Birthday Calendar for Android and start wishing in a single tap.</p>
+      <a class="btn btn-primary btn-lg" id="downloadBtnMain" data-download href="https://github.com/rajdeepvaghela/BirthdayCalendar/releases/latest/download/birthday-calendar.apk">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="btn-ico"><path d="M12 3.2v11.1M12 14.3l-4.2-4.2M12 14.3l4.2-4.2M4.4 17.6v1.6a1.6 1.6 0 0 0 1.6 1.6h12a1.6 1.6 0 0 0 1.6-1.6v-1.6"/></svg>
+        Download the APK
+      </a>
+      <p class="download-note" id="downloadNote">
+        Free · No data collected · Available from the latest GitHub release
+      </p>
+      <p class="download-note">
+        Also on
+        <a href="https://web.archive.org/web/20240503040452/https://play.google.com/store/apps/details?id=com.rdapps.fbbirthdayfetcher" target="_blank" rel="noopener noreferrer">Google Play (archived listing)</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <a class="brand" href="#top">
+      <img src="assets/img/icon-512.png" alt="" width="32" height="32">
+      <span>Birthday<span class="brand-accent">Calendar</span></span>
+    </a>
+    <p class="footer-copy">Birthday Calendar — by RD Apps. All rights reserved.</p>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="https://github.com/rajdeepvaghela/BirthdayCalendar" target="_blank" rel="noopener noreferrer">Source</a>
+      <a href="https://github.com/rajdeepvaghela/BirthdayCalendar/releases" target="_blank" rel="noopener noreferrer">Releases</a>
+      <a href="#privacy">Privacy</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot viewer">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close viewer">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous screenshot">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+  </button>
+  <figure class="lightbox-figure">
+    <img id="lightboxImg" alt="">
+    <figcaption><strong id="lightboxTitle"></strong><span id="lightboxNote"></span></figcaption>
+  </figure>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Next screenshot">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+  </button>
+</dialog>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
