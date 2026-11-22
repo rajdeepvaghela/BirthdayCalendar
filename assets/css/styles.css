@@ -220,7 +220,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   border-radius: 12px;
   background: color-mix(in srgb, var(--surface) 70%, transparent);
   padding: 0;
-  place-items: center; gap: 5px;
+  align-items: center; justify-content: center; gap: 5px;
   flex-direction: column;
 }
 .menu-btn span {
