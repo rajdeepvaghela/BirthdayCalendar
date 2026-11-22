@@ -17,22 +17,24 @@ assets/js/main.js          # theme, menu, tabs, lightbox, scroll-spy, confetti
 assets/img/                # app icon, screenshots, Wear OS tiles
 ```
 
-## The download button
+## The download buttons
 
-The primary call to action points at the **latest GitHub release** of this repository:
+The download calls to action point at the **latest GitHub release** of this repository:
 
 ```
 https://github.com/rajdeepvaghela/BirthdayCalendar/releases/latest/download/birthday-calendar.apk
+https://github.com/rajdeepvaghela/BirthdayCalendar/releases/latest/download/birthday-calendar-wearable.apk
 ```
 
 `releases/latest/download/<asset>` always resolves to the newest published release,
 so publishing a new release updates the site with no code change.
 
-> **Release requirement:** every release must contain an asset named exactly
-> `birthday-calendar.apk`. If you publish a differently named file the button 404s.
+> **Release requirement:** every release must contain assets named exactly
+> `birthday-calendar.apk` and `birthday-calendar-wearable.apk`. If you publish
+> differently named files, the corresponding button will 404.
 >
 > ```bash
-> gh release create v1.2.0 app-release.apk \
+> gh release create v1.2.0 birthday-calendar.apk birthday-calendar-wearable.apk \
 >   --title "Birthday Calendar v1.2.0" \
 >   --notes "What's new"
 > ```

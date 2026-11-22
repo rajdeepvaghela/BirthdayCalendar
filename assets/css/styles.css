@@ -520,6 +520,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .download-icon { width: 96px; height: 96px; border-radius: 22px; margin: 0 auto 1.6rem; box-shadow: var(--shadow-md); }
 .download h2 { margin-bottom: .5rem; }
 .download .lede { margin-bottom: 2rem; }
+.download-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 .download-note { margin: 1rem 0 0; color: var(--text-mute); font-size: .9rem; }
 .download-note a { color: var(--brand-300); }
 
@@ -629,6 +630,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .wear-watches { flex-wrap: wrap; gap: 14px; }
   .watch img { max-width: 132px; }
   .btn-lg { width: 100%; }
+  .download-actions { flex-direction: column; align-items: stretch; }
   .hero-cta { flex-direction: column; }
   .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .shots-watch { grid-template-columns: repeat(2, minmax(0, 1fr)); }
